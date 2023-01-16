@@ -1,0 +1,760 @@
+# [No.1] construct_wrapper.1
+# In file D:\Document\Coding\ui-project\models\unet3plus.py(233)/    def construct(self, inputs):/
+funcgraph fg_1(
+        %para1 : Tensor(F32)[1, 1, 512, 512]    # inputs
+        , %para2 : Ref[Tensor(F32)][3, 80, 3, 3]    # outconv1.weight
+        , %para3 : Ref[Tensor(F32)][80, 80, 3, 3]    # conv1d_1.weight
+        , %para4 : Ref[Tensor(F32)][80]    # bn1d_1.gamma
+        , %para5 : Ref[Tensor(F32)][80]    # bn1d_1.beta
+        , %para6 : Ref[Tensor(F32)][80]    # bn1d_1.moving_mean
+        , %para7 : Ref[Tensor(F32)][80]    # bn1d_1.moving_variance
+        , %para8 : Ref[Tensor(F32)][16, 16, 3, 3]    # h1_Cat_hd1_conv.weight
+        , %para9 : Ref[Tensor(F32)][16, 80, 3, 3]    # hd2_UT_hd1_conv.weight
+        , %para10 : Ref[Tensor(F32)][16, 80, 3, 3]    # hd3_UT_hd1_conv.weight
+        , %para11 : Ref[Tensor(F32)][16, 80, 3, 3]    # hd4_UT_hd1_conv.weight
+        , %para12 : Ref[Tensor(F32)][16, 256, 3, 3]    # hd5_UT_hd1_conv.weight
+        , %para13 : Ref[Tensor(F32)][16]    # h1_Cat_hd1_bn.gamma
+        , %para14 : Ref[Tensor(F32)][16]    # h1_Cat_hd1_bn.beta
+        , %para15 : Ref[Tensor(F32)][16]    # h1_Cat_hd1_bn.moving_mean
+        , %para16 : Ref[Tensor(F32)][16]    # h1_Cat_hd1_bn.moving_variance
+        , %para17 : Ref[Tensor(F32)][16]    # hd2_UT_hd1_bn.gamma
+        , %para18 : Ref[Tensor(F32)][16]    # hd2_UT_hd1_bn.beta
+        , %para19 : Ref[Tensor(F32)][16]    # hd2_UT_hd1_bn.moving_mean
+        , %para20 : Ref[Tensor(F32)][16]    # hd2_UT_hd1_bn.moving_variance
+        , %para21 : Ref[Tensor(F32)][16]    # hd3_UT_hd1_bn.gamma
+        , %para22 : Ref[Tensor(F32)][16]    # hd3_UT_hd1_bn.beta
+        , %para23 : Ref[Tensor(F32)][16]    # hd3_UT_hd1_bn.moving_mean
+        , %para24 : Ref[Tensor(F32)][16]    # hd3_UT_hd1_bn.moving_variance
+        , %para25 : Ref[Tensor(F32)][16]    # hd4_UT_hd1_bn.gamma
+        , %para26 : Ref[Tensor(F32)][16]    # hd4_UT_hd1_bn.beta
+        , %para27 : Ref[Tensor(F32)][16]    # hd4_UT_hd1_bn.moving_mean
+        , %para28 : Ref[Tensor(F32)][16]    # hd4_UT_hd1_bn.moving_variance
+        , %para29 : Ref[Tensor(F32)][16]    # hd5_UT_hd1_bn.gamma
+        , %para30 : Ref[Tensor(F32)][16]    # hd5_UT_hd1_bn.beta
+        , %para31 : Ref[Tensor(F32)][16]    # hd5_UT_hd1_bn.moving_mean
+        , %para32 : Ref[Tensor(F32)][16]    # hd5_UT_hd1_bn.moving_variance
+        , %para33 : Ref[Tensor(F32)][80, 80, 3, 3]    # conv2d_1.weight
+        , %para34 : Ref[Tensor(F32)][80, 80, 3, 3]    # conv3d_1.weight
+        , %para35 : Ref[Tensor(F32)][80, 80, 3, 3]    # conv4d_1.weight
+        , %para36 : Ref[Tensor(F32)][80]    # bn2d_1.gamma
+        , %para37 : Ref[Tensor(F32)][80]    # bn2d_1.beta
+        , %para38 : Ref[Tensor(F32)][80]    # bn2d_1.moving_mean
+        , %para39 : Ref[Tensor(F32)][80]    # bn2d_1.moving_variance
+        , %para40 : Ref[Tensor(F32)][80]    # bn3d_1.gamma
+        , %para41 : Ref[Tensor(F32)][80]    # bn3d_1.beta
+        , %para42 : Ref[Tensor(F32)][80]    # bn3d_1.moving_mean
+        , %para43 : Ref[Tensor(F32)][80]    # bn3d_1.moving_variance
+        , %para44 : Ref[Tensor(F32)][80]    # bn4d_1.gamma
+        , %para45 : Ref[Tensor(F32)][80]    # bn4d_1.beta
+        , %para46 : Ref[Tensor(F32)][80]    # bn4d_1.moving_mean
+        , %para47 : Ref[Tensor(F32)][80]    # bn4d_1.moving_variance
+        , %para48 : Ref[Tensor(F32)][16, 16, 3, 3]    # h1_PT_hd2_conv.weight
+        , %para49 : Ref[Tensor(F32)][16, 32, 3, 3]    # h2_Cat_hd2_conv.weight
+        , %para50 : Ref[Tensor(F32)][16, 80, 3, 3]    # hd3_UT_hd2_conv.weight
+        , %para51 : Ref[Tensor(F32)][16, 80, 3, 3]    # hd4_UT_hd2_conv.weight
+        , %para52 : Ref[Tensor(F32)][16, 256, 3, 3]    # hd5_UT_hd2_conv.weight
+        , %para53 : Ref[Tensor(F32)][16, 16, 3, 3]    # h1_PT_hd3_conv.weight
+        , %para54 : Ref[Tensor(F32)][16, 32, 3, 3]    # h2_PT_hd3_conv.weight
+        , %para55 : Ref[Tensor(F32)][16, 64, 3, 3]    # h3_Cat_hd3_conv.weight
+        , %para56 : Ref[Tensor(F32)][16, 80, 3, 3]    # hd4_UT_hd3_conv.weight
+        , %para57 : Ref[Tensor(F32)][16, 256, 3, 3]    # hd5_UT_hd3_conv.weight
+        , %para58 : Ref[Tensor(F32)][16, 16, 3, 3]    # h1_PT_hd4_conv.weight
+        , %para59 : Ref[Tensor(F32)][16, 32, 3, 3]    # h2_PT_hd4_conv.weight
+        , %para60 : Ref[Tensor(F32)][16, 64, 3, 3]    # h3_PT_hd4_conv.weight
+        , %para61 : Ref[Tensor(F32)][16, 128, 3, 3]    # h4_Cat_hd4_conv.weight
+        , %para62 : Ref[Tensor(F32)][16, 256, 3, 3]    # hd5_UT_hd4_conv.weight
+        , %para63 : Ref[Tensor(F32)][16, 1, 3, 3]    # conv1.conv.0.weight
+        , %para64 : Ref[Tensor(F32)][16, 16, 3, 3]    # conv1.conv.3.weight
+        , %para65 : Ref[Tensor(F32)][16]    # h1_PT_hd2_bn.gamma
+        , %para66 : Ref[Tensor(F32)][16]    # h1_PT_hd2_bn.beta
+        , %para67 : Ref[Tensor(F32)][16]    # h1_PT_hd2_bn.moving_mean
+        , %para68 : Ref[Tensor(F32)][16]    # h1_PT_hd2_bn.moving_variance
+        , %para69 : Ref[Tensor(F32)][16]    # h2_Cat_hd2_bn.gamma
+        , %para70 : Ref[Tensor(F32)][16]    # h2_Cat_hd2_bn.beta
+        , %para71 : Ref[Tensor(F32)][16]    # h2_Cat_hd2_bn.moving_mean
+        , %para72 : Ref[Tensor(F32)][16]    # h2_Cat_hd2_bn.moving_variance
+        , %para73 : Ref[Tensor(F32)][16]    # hd3_UT_hd2_bn.gamma
+        , %para74 : Ref[Tensor(F32)][16]    # hd3_UT_hd2_bn.beta
+        , %para75 : Ref[Tensor(F32)][16]    # hd3_UT_hd2_bn.moving_mean
+        , %para76 : Ref[Tensor(F32)][16]    # hd3_UT_hd2_bn.moving_variance
+        , %para77 : Ref[Tensor(F32)][16]    # hd4_UT_hd2_bn.gamma
+        , %para78 : Ref[Tensor(F32)][16]    # hd4_UT_hd2_bn.beta
+        , %para79 : Ref[Tensor(F32)][16]    # hd4_UT_hd2_bn.moving_mean
+        , %para80 : Ref[Tensor(F32)][16]    # hd4_UT_hd2_bn.moving_variance
+        , %para81 : Ref[Tensor(F32)][16]    # hd5_UT_hd2_bn.gamma
+        , %para82 : Ref[Tensor(F32)][16]    # hd5_UT_hd2_bn.beta
+        , %para83 : Ref[Tensor(F32)][16]    # hd5_UT_hd2_bn.moving_mean
+        , %para84 : Ref[Tensor(F32)][16]    # hd5_UT_hd2_bn.moving_variance
+        , %para85 : Ref[Tensor(F32)][16]    # h1_PT_hd3_bn.gamma
+        , %para86 : Ref[Tensor(F32)][16]    # h1_PT_hd3_bn.beta
+        , %para87 : Ref[Tensor(F32)][16]    # h1_PT_hd3_bn.moving_mean
+        , %para88 : Ref[Tensor(F32)][16]    # h1_PT_hd3_bn.moving_variance
+        , %para89 : Ref[Tensor(F32)][16]    # h2_PT_hd3_bn.gamma
+        , %para90 : Ref[Tensor(F32)][16]    # h2_PT_hd3_bn.beta
+        , %para91 : Ref[Tensor(F32)][16]    # h2_PT_hd3_bn.moving_mean
+        , %para92 : Ref[Tensor(F32)][16]    # h2_PT_hd3_bn.moving_variance
+        , %para93 : Ref[Tensor(F32)][16]    # h3_Cat_hd3_bn.gamma
+        , %para94 : Ref[Tensor(F32)][16]    # h3_Cat_hd3_bn.beta
+        , %para95 : Ref[Tensor(F32)][16]    # h3_Cat_hd3_bn.moving_mean
+        , %para96 : Ref[Tensor(F32)][16]    # h3_Cat_hd3_bn.moving_variance
+        , %para97 : Ref[Tensor(F32)][16]    # hd4_UT_hd3_bn.gamma
+        , %para98 : Ref[Tensor(F32)][16]    # hd4_UT_hd3_bn.beta
+        , %para99 : Ref[Tensor(F32)][16]    # hd4_UT_hd3_bn.moving_mean
+        , %para100 : Ref[Tensor(F32)][16]    # hd4_UT_hd3_bn.moving_variance
+        , %para101 : Ref[Tensor(F32)][16]    # hd5_UT_hd3_bn.gamma
+        , %para102 : Ref[Tensor(F32)][16]    # hd5_UT_hd3_bn.beta
+        , %para103 : Ref[Tensor(F32)][16]    # hd5_UT_hd3_bn.moving_mean
+        , %para104 : Ref[Tensor(F32)][16]    # hd5_UT_hd3_bn.moving_variance
+        , %para105 : Ref[Tensor(F32)][16]    # h1_PT_hd4_bn.gamma
+        , %para106 : Ref[Tensor(F32)][16]    # h1_PT_hd4_bn.beta
+        , %para107 : Ref[Tensor(F32)][16]    # h1_PT_hd4_bn.moving_mean
+        , %para108 : Ref[Tensor(F32)][16]    # h1_PT_hd4_bn.moving_variance
+        , %para109 : Ref[Tensor(F32)][16]    # h2_PT_hd4_bn.gamma
+        , %para110 : Ref[Tensor(F32)][16]    # h2_PT_hd4_bn.beta
+        , %para111 : Ref[Tensor(F32)][16]    # h2_PT_hd4_bn.moving_mean
+        , %para112 : Ref[Tensor(F32)][16]    # h2_PT_hd4_bn.moving_variance
+        , %para113 : Ref[Tensor(F32)][16]    # h3_PT_hd4_bn.gamma
+        , %para114 : Ref[Tensor(F32)][16]    # h3_PT_hd4_bn.beta
+        , %para115 : Ref[Tensor(F32)][16]    # h3_PT_hd4_bn.moving_mean
+        , %para116 : Ref[Tensor(F32)][16]    # h3_PT_hd4_bn.moving_variance
+        , %para117 : Ref[Tensor(F32)][16]    # h4_Cat_hd4_bn.gamma
+        , %para118 : Ref[Tensor(F32)][16]    # h4_Cat_hd4_bn.beta
+        , %para119 : Ref[Tensor(F32)][16]    # h4_Cat_hd4_bn.moving_mean
+        , %para120 : Ref[Tensor(F32)][16]    # h4_Cat_hd4_bn.moving_variance
+        , %para121 : Ref[Tensor(F32)][16]    # hd5_UT_hd4_bn.gamma
+        , %para122 : Ref[Tensor(F32)][16]    # hd5_UT_hd4_bn.beta
+        , %para123 : Ref[Tensor(F32)][16]    # hd5_UT_hd4_bn.moving_mean
+        , %para124 : Ref[Tensor(F32)][16]    # hd5_UT_hd4_bn.moving_variance
+        , %para125 : Ref[Tensor(F32)][256, 128, 3, 3]    # conv5.conv.0.weight
+        , %para126 : Ref[Tensor(F32)][256, 256, 3, 3]    # conv5.conv.3.weight
+        , %para127 : Ref[Tensor(F32)][16]    # conv1.conv.1.gamma
+        , %para128 : Ref[Tensor(F32)][16]    # conv1.conv.1.beta
+        , %para129 : Ref[Tensor(F32)][16]    # conv1.conv.1.moving_mean
+        , %para130 : Ref[Tensor(F32)][16]    # conv1.conv.1.moving_variance
+        , %para131 : Ref[Tensor(F32)][16]    # conv1.conv.4.gamma
+        , %para132 : Ref[Tensor(F32)][16]    # conv1.conv.4.beta
+        , %para133 : Ref[Tensor(F32)][16]    # conv1.conv.4.moving_mean
+        , %para134 : Ref[Tensor(F32)][16]    # conv1.conv.4.moving_variance
+        , %para135 : Ref[Tensor(F32)][128, 64, 3, 3]    # conv4.conv.0.weight
+        , %para136 : Ref[Tensor(F32)][128, 128, 3, 3]    # conv4.conv.3.weight
+        , %para137 : Ref[Tensor(F32)][256]    # conv5.conv.1.gamma
+        , %para138 : Ref[Tensor(F32)][256]    # conv5.conv.1.beta
+        , %para139 : Ref[Tensor(F32)][256]    # conv5.conv.1.moving_mean
+        , %para140 : Ref[Tensor(F32)][256]    # conv5.conv.1.moving_variance
+        , %para141 : Ref[Tensor(F32)][256]    # conv5.conv.4.gamma
+        , %para142 : Ref[Tensor(F32)][256]    # conv5.conv.4.beta
+        , %para143 : Ref[Tensor(F32)][256]    # conv5.conv.4.moving_mean
+        , %para144 : Ref[Tensor(F32)][256]    # conv5.conv.4.moving_variance
+        , %para145 : Ref[Tensor(F32)][64, 32, 3, 3]    # conv3.conv.0.weight
+        , %para146 : Ref[Tensor(F32)][64, 64, 3, 3]    # conv3.conv.3.weight
+        , %para147 : Ref[Tensor(F32)][128]    # conv4.conv.1.gamma
+        , %para148 : Ref[Tensor(F32)][128]    # conv4.conv.1.beta
+        , %para149 : Ref[Tensor(F32)][128]    # conv4.conv.1.moving_mean
+        , %para150 : Ref[Tensor(F32)][128]    # conv4.conv.1.moving_variance
+        , %para151 : Ref[Tensor(F32)][128]    # conv4.conv.4.gamma
+        , %para152 : Ref[Tensor(F32)][128]    # conv4.conv.4.beta
+        , %para153 : Ref[Tensor(F32)][128]    # conv4.conv.4.moving_mean
+        , %para154 : Ref[Tensor(F32)][128]    # conv4.conv.4.moving_variance
+        , %para155 : Ref[Tensor(F32)][32, 16, 3, 3]    # conv2.conv.0.weight
+        , %para156 : Ref[Tensor(F32)][32, 32, 3, 3]    # conv2.conv.3.weight
+        , %para157 : Ref[Tensor(F32)][64]    # conv3.conv.1.gamma
+        , %para158 : Ref[Tensor(F32)][64]    # conv3.conv.1.beta
+        , %para159 : Ref[Tensor(F32)][64]    # conv3.conv.1.moving_mean
+        , %para160 : Ref[Tensor(F32)][64]    # conv3.conv.1.moving_variance
+        , %para161 : Ref[Tensor(F32)][64]    # conv3.conv.4.gamma
+        , %para162 : Ref[Tensor(F32)][64]    # conv3.conv.4.beta
+        , %para163 : Ref[Tensor(F32)][64]    # conv3.conv.4.moving_mean
+        , %para164 : Ref[Tensor(F32)][64]    # conv3.conv.4.moving_variance
+        , %para165 : Ref[Tensor(F32)][32]    # conv2.conv.1.gamma
+        , %para166 : Ref[Tensor(F32)][32]    # conv2.conv.1.beta
+        , %para167 : Ref[Tensor(F32)][32]    # conv2.conv.1.moving_mean
+        , %para168 : Ref[Tensor(F32)][32]    # conv2.conv.1.moving_variance
+        , %para169 : Ref[Tensor(F32)][32]    # conv2.conv.4.gamma
+        , %para170 : Ref[Tensor(F32)][32]    # conv2.conv.4.beta
+        , %para171 : Ref[Tensor(F32)][32]    # conv2.conv.4.moving_mean
+        , %para172 : Ref[Tensor(F32)][32]    # conv2.conv.4.moving_variance
+    ) {
+
+#------------------------> 0
+    %1 = FuncGraph::fg_6(%para1)    #(Tensor(F32)[1, 1, 512, 512])    # fg_6=construct.6 #scope: Default
+#[CNode]13
+    Primitive::Return{prim_type=1}(%1)    #(Undefined) #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(296)/        return d1 # [batch, n_classes, H, W]/#[CNode]14
+}
+# order:
+#   1: construct_wrapper.1:[CNode]13{[0]: ValueNode<FuncGraph> construct.6, [1]: inputs}
+#   2: construct_wrapper.1:[CNode]14{[0]: ValueNode<Primitive> Return, [1]: [CNode]13}
+
+
+# [No.2] construct.6
+# In file D:\Document\Coding\ui-project\models\unet3plus.py(233)/    def construct(self, inputs):/
+funcgraph fg_6[fg_1](
+        %para173 : Tensor(F32)[1, 1, 512, 512]    # inputs
+    ) {
+    %1 : Tensor(F32)[1, 16, 512, 512] = FuncGraph::fg_15(%para173)    #(Tensor(F32)[1, 1, 512, 512])    # fg_15=construct.15 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(236)/        h1 = self.conv1(inputs)  # h1->320*320*64/#h1
+    %2 : Tensor(F32)[1, 16, 512, 512] = FuncGraph::fg_16(%1)    #(Tensor(F32)[1, 16, 512, 512])    # fg_16=construct.16 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(283)/        h1_Cat_hd1 = self.h1_Cat_hd1_relu(self.h1_Cat_hd1_bn(self.h1_Cat_hd1_conv(h1)))/#[CNode]17
+    %3 : Tensor(F32)[1, 16, 512, 512] = FuncGraph::fg_18(%2)    #(Tensor(F32)[1, 16, 512, 512])    # fg_18=construct.18 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(283)/        h1_Cat_hd1 = self.h1_Cat_hd1_relu(self.h1_Cat_hd1_bn(self.h1_Cat_hd1_conv(h1)))/#[CNode]19
+    %4 : Tensor(F32)[1, 16, 512, 512] = FuncGraph::fg_20(%3)    #(Tensor(F32)[1, 16, 512, 512])    # fg_20=construct.20 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(283)/        h1_Cat_hd1 = self.h1_Cat_hd1_relu(self.h1_Cat_hd1_bn(self.h1_Cat_hd1_conv(h1)))/#h1_Cat_hd1
+    %5 : Tensor(F32)[1, 16, 256, 256] = FuncGraph::fg_21(%1)    #(Tensor(F32)[1, 16, 512, 512])    # fg_21=construct.21 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(272)/        h1_PT_hd2 = self.h1_PT_hd2_relu(self.h1_PT_hd2_bn(self.h1_PT_hd2_conv(self.h1_PT_hd2(h1))))/#[CNode]22
+    %6 : Tensor(F32)[1, 16, 256, 256] = FuncGraph::fg_23(%5)    #(Tensor(F32)[1, 16, 256, 256])    # fg_23=construct.23 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(272)/        h1_PT_hd2 = self.h1_PT_hd2_relu(self.h1_PT_hd2_bn(self.h1_PT_hd2_conv(self.h1_PT_hd2(h1))))/#[CNode]24
+    %7 : Tensor(F32)[1, 16, 256, 256] = FuncGraph::fg_25(%6)    #(Tensor(F32)[1, 16, 256, 256])    # fg_25=construct.25 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(272)/        h1_PT_hd2 = self.h1_PT_hd2_relu(self.h1_PT_hd2_bn(self.h1_PT_hd2_conv(self.h1_PT_hd2(h1))))/#[CNode]26
+    %8 : Tensor(F32)[1, 16, 256, 256] = FuncGraph::fg_27(%7)    #(Tensor(F32)[1, 16, 256, 256])    # fg_27=construct.27 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(272)/        h1_PT_hd2 = self.h1_PT_hd2_relu(self.h1_PT_hd2_bn(self.h1_PT_hd2_conv(self.h1_PT_hd2(h1))))/#h1_PT_hd2
+    %9 : Tensor(F32)[1, 16, 256, 256] = FuncGraph::fg_28(%1)    #(Tensor(F32)[1, 16, 512, 512])    # fg_28=construct.28 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(238)/        h2 = self.maxpool1(h1)/#h2
+
+#------------------------> 1
+    %10 = FuncGraph::fg_7(%9)    #(Tensor(F32)[1, 16, 256, 256])    # fg_7=construct.7 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(239)/        h2 = self.conv2(h2)  # h2->160*160*128/#h2
+    %11 = FuncGraph::fg_29(%10)    #(Undefined)    # fg_29=construct.29 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(273)/        h2_Cat_hd2 = self.h2_Cat_hd2_relu(self.h2_Cat_hd2_bn(self.h2_Cat_hd2_conv(h2)))/#[CNode]30
+    %12 = FuncGraph::fg_31(%11)    #(Undefined)    # fg_31=construct.31 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(273)/        h2_Cat_hd2 = self.h2_Cat_hd2_relu(self.h2_Cat_hd2_bn(self.h2_Cat_hd2_conv(h2)))/#[CNode]32
+    %13 = FuncGraph::fg_33(%12)    #(Undefined)    # fg_33=construct.33 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(273)/        h2_Cat_hd2 = self.h2_Cat_hd2_relu(self.h2_Cat_hd2_bn(self.h2_Cat_hd2_conv(h2)))/#h2_Cat_hd2
+    %14 = FuncGraph::fg_34(%1)    #(Tensor(F32)[1, 16, 512, 512])    # fg_34=construct.34 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(262)/        h1_PT_hd3 = self.h1_PT_hd3_relu(self.h1_PT_hd3_bn(self.h1_PT_hd3_conv(self.h1_PT_hd3(h1))))/#[CNode]35
+    %15 = FuncGraph::fg_36(%14)    #(Undefined)    # fg_36=construct.36 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(262)/        h1_PT_hd3 = self.h1_PT_hd3_relu(self.h1_PT_hd3_bn(self.h1_PT_hd3_conv(self.h1_PT_hd3(h1))))/#[CNode]37
+    %16 = FuncGraph::fg_38(%15)    #(Undefined)    # fg_38=construct.38 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(262)/        h1_PT_hd3 = self.h1_PT_hd3_relu(self.h1_PT_hd3_bn(self.h1_PT_hd3_conv(self.h1_PT_hd3(h1))))/#[CNode]39
+    %17 = FuncGraph::fg_40(%16)    #(Undefined)    # fg_40=construct.40 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(262)/        h1_PT_hd3 = self.h1_PT_hd3_relu(self.h1_PT_hd3_bn(self.h1_PT_hd3_conv(self.h1_PT_hd3(h1))))/#h1_PT_hd3
+    %18 = FuncGraph::fg_41(%10)    #(Undefined)    # fg_41=construct.41 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(263)/        h2_PT_hd3 = self.h2_PT_hd3_relu(self.h2_PT_hd3_bn(self.h2_PT_hd3_conv(self.h2_PT_hd3(h2))))/#[CNode]42
+    %19 = FuncGraph::fg_43(%18)    #(Undefined)    # fg_43=construct.43 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(263)/        h2_PT_hd3 = self.h2_PT_hd3_relu(self.h2_PT_hd3_bn(self.h2_PT_hd3_conv(self.h2_PT_hd3(h2))))/#[CNode]44
+    %20 = FuncGraph::fg_45(%19)    #(Undefined)    # fg_45=construct.45 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(263)/        h2_PT_hd3 = self.h2_PT_hd3_relu(self.h2_PT_hd3_bn(self.h2_PT_hd3_conv(self.h2_PT_hd3(h2))))/#[CNode]46
+    %21 = FuncGraph::fg_47(%20)    #(Undefined)    # fg_47=construct.47 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(263)/        h2_PT_hd3 = self.h2_PT_hd3_relu(self.h2_PT_hd3_bn(self.h2_PT_hd3_conv(self.h2_PT_hd3(h2))))/#h2_PT_hd3
+    %22 = FuncGraph::fg_48(%10)    #(Undefined)    # fg_48=construct.48 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(241)/        h3 = self.maxpool2(h2)/#h3
+    %23 = FuncGraph::fg_49(%22)    #(Undefined)    # fg_49=construct.49 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(242)/        h3 = self.conv3(h3)  # h3->80*80*256/#h3
+    %24 = FuncGraph::fg_50(%23)    #(Undefined)    # fg_50=construct.50 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(264)/        h3_Cat_hd3 = self.h3_Cat_hd3_relu(self.h3_Cat_hd3_bn(self.h3_Cat_hd3_conv(h3)))/#[CNode]51
+    %25 = FuncGraph::fg_52(%24)    #(Undefined)    # fg_52=construct.52 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(264)/        h3_Cat_hd3 = self.h3_Cat_hd3_relu(self.h3_Cat_hd3_bn(self.h3_Cat_hd3_conv(h3)))/#[CNode]53
+    %26 = FuncGraph::fg_54(%25)    #(Undefined)    # fg_54=construct.54 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(264)/        h3_Cat_hd3 = self.h3_Cat_hd3_relu(self.h3_Cat_hd3_bn(self.h3_Cat_hd3_conv(h3)))/#h3_Cat_hd3
+    %27 = FuncGraph::fg_55(%1)    #(Tensor(F32)[1, 16, 512, 512])    # fg_55=construct.55 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(251)/        h1_PT_hd4 = self.h1_PT_hd4_relu(self.h1_PT_hd4_bn(self.h1_PT_hd4_conv(self.h1_PT_hd4(h1))))/#[CNode]56
+    %28 = FuncGraph::fg_57(%27)    #(Undefined)    # fg_57=construct.57 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(251)/        h1_PT_hd4 = self.h1_PT_hd4_relu(self.h1_PT_hd4_bn(self.h1_PT_hd4_conv(self.h1_PT_hd4(h1))))/#[CNode]58
+    %29 = FuncGraph::fg_59(%28)    #(Undefined)    # fg_59=construct.59 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(251)/        h1_PT_hd4 = self.h1_PT_hd4_relu(self.h1_PT_hd4_bn(self.h1_PT_hd4_conv(self.h1_PT_hd4(h1))))/#[CNode]60
+    %30 = FuncGraph::fg_61(%29)    #(Undefined)    # fg_61=construct.61 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(251)/        h1_PT_hd4 = self.h1_PT_hd4_relu(self.h1_PT_hd4_bn(self.h1_PT_hd4_conv(self.h1_PT_hd4(h1))))/#h1_PT_hd4
+    %31 = FuncGraph::fg_62(%10)    #(Undefined)    # fg_62=construct.62 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(252)/        h2_PT_hd4 = self.h2_PT_hd4_relu(self.h2_PT_hd4_bn(self.h2_PT_hd4_conv(self.h2_PT_hd4(h2))))/#[CNode]63
+    %32 = FuncGraph::fg_64(%31)    #(Undefined)    # fg_64=construct.64 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(252)/        h2_PT_hd4 = self.h2_PT_hd4_relu(self.h2_PT_hd4_bn(self.h2_PT_hd4_conv(self.h2_PT_hd4(h2))))/#[CNode]65
+    %33 = FuncGraph::fg_66(%32)    #(Undefined)    # fg_66=construct.66 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(252)/        h2_PT_hd4 = self.h2_PT_hd4_relu(self.h2_PT_hd4_bn(self.h2_PT_hd4_conv(self.h2_PT_hd4(h2))))/#[CNode]67
+    %34 = FuncGraph::fg_68(%33)    #(Undefined)    # fg_68=construct.68 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(252)/        h2_PT_hd4 = self.h2_PT_hd4_relu(self.h2_PT_hd4_bn(self.h2_PT_hd4_conv(self.h2_PT_hd4(h2))))/#h2_PT_hd4
+    %35 = FuncGraph::fg_69(%23)    #(Undefined)    # fg_69=construct.69 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(253)/        h3_PT_hd4 = self.h3_PT_hd4_relu(self.h3_PT_hd4_bn(self.h3_PT_hd4_conv(self.h3_PT_hd4(h3))))/#[CNode]70
+    %36 = FuncGraph::fg_71(%35)    #(Undefined)    # fg_71=construct.71 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(253)/        h3_PT_hd4 = self.h3_PT_hd4_relu(self.h3_PT_hd4_bn(self.h3_PT_hd4_conv(self.h3_PT_hd4(h3))))/#[CNode]72
+    %37 = FuncGraph::fg_73(%36)    #(Undefined)    # fg_73=construct.73 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(253)/        h3_PT_hd4 = self.h3_PT_hd4_relu(self.h3_PT_hd4_bn(self.h3_PT_hd4_conv(self.h3_PT_hd4(h3))))/#[CNode]74
+    %38 = FuncGraph::fg_75(%37)    #(Undefined)    # fg_75=construct.75 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(253)/        h3_PT_hd4 = self.h3_PT_hd4_relu(self.h3_PT_hd4_bn(self.h3_PT_hd4_conv(self.h3_PT_hd4(h3))))/#h3_PT_hd4
+    %39 = FuncGraph::fg_76(%23)    #(Undefined)    # fg_76=construct.76 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(244)/        h4 = self.maxpool3(h3)/#h4
+    %40 = FuncGraph::fg_77(%39)    #(Undefined)    # fg_77=construct.77 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(245)/        h4 = self.conv4(h4)  # h4->40*40*512/#h4
+    %41 = FuncGraph::fg_78(%40)    #(Undefined)    # fg_78=construct.78 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(254)/        h4_Cat_hd4 = self.h4_Cat_hd4_relu(self.h4_Cat_hd4_bn(self.h4_Cat_hd4_conv(h4)))/#[CNode]79
+    %42 = FuncGraph::fg_80(%41)    #(Undefined)    # fg_80=construct.80 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(254)/        h4_Cat_hd4 = self.h4_Cat_hd4_relu(self.h4_Cat_hd4_bn(self.h4_Cat_hd4_conv(h4)))/#[CNode]81
+    %43 = FuncGraph::fg_82(%42)    #(Undefined)    # fg_82=construct.82 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(254)/        h4_Cat_hd4 = self.h4_Cat_hd4_relu(self.h4_Cat_hd4_bn(self.h4_Cat_hd4_conv(h4)))/#h4_Cat_hd4
+    %44 = FuncGraph::fg_83(%40)    #(Undefined)    # fg_83=construct.83 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(247)/        h5 = self.maxpool4(h4)/#h5
+    %45 = FuncGraph::fg_84(%44)    #(Undefined)    # fg_84=construct.84 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(248)/        hd5 = self.conv5(h5)  # h5->20*20*1024/#hd5
+    %46 = DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}(%45)    #(Undefined) #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(256)/                     self.ResizeBilinear(hd5, scale_factor=2, align_corners=True))))/#[CNode]85
+    %47 = DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}("scale_factor", "align_corners")    #(Undefined, Undefined) #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(256)/                     self.ResizeBilinear(hd5, scale_factor=2, align_corners=True))))/#[CNode]86
+    %48 = DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}(I64(2), Bool(1))    #(Undefined, Undefined) #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(256)/                     self.ResizeBilinear(hd5, scale_factor=2, align_corners=True))))/#[CNode]87
+    %49 = DoSignaturePrimitive::S-Prim-make_dict{prim_type=1}(%47, %48)    #(Undefined, Undefined) #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(256)/                     self.ResizeBilinear(hd5, scale_factor=2, align_corners=True))))/#[CNode]88
+    %50 = UnpackCall::unpack_call(FuncGraph::fg_89, %46, %49)    #(Undefined, Undefined, Undefined)    # fg_89=construct.89 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(256)/                     self.ResizeBilinear(hd5, scale_factor=2, align_corners=True))))/#[CNode]90
+    %51 = FuncGraph::fg_91(%50)    #(Undefined)    # fg_91=construct.91 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(255)/        hd5_UT_hd4 = self.hd5_UT_hd4_relu(self.hd5_UT_hd4_bn(self.hd5_UT_hd4_conv(\/#[CNode]92
+    %52 = FuncGraph::fg_93(%51)    #(Undefined)    # fg_93=construct.93 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(255)/        hd5_UT_hd4 = self.hd5_UT_hd4_relu(self.hd5_UT_hd4_bn(self.hd5_UT_hd4_conv(\/#[CNode]94
+    %53 = FuncGraph::fg_95(%52)    #(Undefined)    # fg_95=construct.95 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(255)/        hd5_UT_hd4 = self.hd5_UT_hd4_relu(self.hd5_UT_hd4_bn(self.hd5_UT_hd4_conv(\/#hd5_UT_hd4
+    %54 = DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}(%30, %34, %38, %43, %53)    #(Undefined, Undefined, Undefined, Undefined, Undefined) #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(260)/            self.concat1((h1_PT_hd4, h2_PT_hd4, h3_PT_hd4, h4_Cat_hd4, hd5_UT_hd4))))) # hd4->40*40*UpChannels/#[CNode]96
+    %55 = DoSignaturePrimitive::S-Prim-Concat{prim_type=1}[axis=I64(1)](%54)    #(Undefined) #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(260)/            self.concat1((h1_PT_hd4, h2_PT_hd4, h3_PT_hd4, h4_Cat_hd4, hd5_UT_hd4))))) # hd4->40*40*UpChannels/#[CNode]97
+    %56 = FuncGraph::fg_98(%55)    #(Undefined)    # fg_98=construct.98 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(259)/        hd4 = self.relu4d_1(self.bn4d_1(self.conv4d_1(/#[CNode]99
+    %57 = FuncGraph::fg_100(%56)    #(Undefined)    # fg_100=construct.100 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(259)/        hd4 = self.relu4d_1(self.bn4d_1(self.conv4d_1(/#[CNode]101
+    %58 = FuncGraph::fg_102(%57)    #(Undefined)    # fg_102=construct.102 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(259)/        hd4 = self.relu4d_1(self.bn4d_1(self.conv4d_1(/#hd4
+    %59 = DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}(%58)    #(Undefined) #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(266)/                     self.ResizeBilinear(hd4, scale_factor=2, align_corners=True))))/#[CNode]103
+    %60 = DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}("scale_factor", "align_corners")    #(Undefined, Undefined) #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(266)/                     self.ResizeBilinear(hd4, scale_factor=2, align_corners=True))))/#[CNode]104
+    %61 = DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}(I64(2), Bool(1))    #(Undefined, Undefined) #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(266)/                     self.ResizeBilinear(hd4, scale_factor=2, align_corners=True))))/#[CNode]105
+    %62 = DoSignaturePrimitive::S-Prim-make_dict{prim_type=1}(%60, %61)    #(Undefined, Undefined) #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(266)/                     self.ResizeBilinear(hd4, scale_factor=2, align_corners=True))))/#[CNode]106
+    %63 = UnpackCall::unpack_call(FuncGraph::fg_89, %59, %62)    #(Undefined, Undefined, Undefined)    # fg_89=construct.89 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(266)/                     self.ResizeBilinear(hd4, scale_factor=2, align_corners=True))))/#[CNode]107
+    %64 = FuncGraph::fg_108(%63)    #(Undefined)    # fg_108=construct.108 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(265)/        hd4_UT_hd3 = self.hd4_UT_hd3_relu(self.hd4_UT_hd3_bn(self.hd4_UT_hd3_conv(\/#[CNode]109
+    %65 = FuncGraph::fg_110(%64)    #(Undefined)    # fg_110=construct.110 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(265)/        hd4_UT_hd3 = self.hd4_UT_hd3_relu(self.hd4_UT_hd3_bn(self.hd4_UT_hd3_conv(\/#[CNode]111
+    %66 = FuncGraph::fg_112(%65)    #(Undefined)    # fg_112=construct.112 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(265)/        hd4_UT_hd3 = self.hd4_UT_hd3_relu(self.hd4_UT_hd3_bn(self.hd4_UT_hd3_conv(\/#hd4_UT_hd3
+    %67 = DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}(%45)    #(Undefined) #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(268)/                     self.ResizeBilinear(hd5, scale_factor=4, align_corners=True))))/#[CNode]113
+    %68 = DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}("scale_factor", "align_corners")    #(Undefined, Undefined) #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(268)/                     self.ResizeBilinear(hd5, scale_factor=4, align_corners=True))))/#[CNode]114
+    %69 = DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}(I64(4), Bool(1))    #(Undefined, Undefined) #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(268)/                     self.ResizeBilinear(hd5, scale_factor=4, align_corners=True))))/#[CNode]115
+    %70 = DoSignaturePrimitive::S-Prim-make_dict{prim_type=1}(%68, %69)    #(Undefined, Undefined) #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(268)/                     self.ResizeBilinear(hd5, scale_factor=4, align_corners=True))))/#[CNode]116
+    %71 = UnpackCall::unpack_call(FuncGraph::fg_89, %67, %70)    #(Undefined, Undefined, Undefined)    # fg_89=construct.89 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(268)/                     self.ResizeBilinear(hd5, scale_factor=4, align_corners=True))))/#[CNode]117
+    %72 = FuncGraph::fg_118(%71)    #(Undefined)    # fg_118=construct.118 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(267)/        hd5_UT_hd3 = self.hd5_UT_hd3_relu(self.hd5_UT_hd3_bn(self.hd5_UT_hd3_conv(\/#[CNode]119
+    %73 = FuncGraph::fg_120(%72)    #(Undefined)    # fg_120=construct.120 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(267)/        hd5_UT_hd3 = self.hd5_UT_hd3_relu(self.hd5_UT_hd3_bn(self.hd5_UT_hd3_conv(\/#[CNode]121
+    %74 = FuncGraph::fg_122(%73)    #(Undefined)    # fg_122=construct.122 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(267)/        hd5_UT_hd3 = self.hd5_UT_hd3_relu(self.hd5_UT_hd3_bn(self.hd5_UT_hd3_conv(\/#hd5_UT_hd3
+    %75 = DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}(%17, %21, %26, %66, %74)    #(Undefined, Undefined, Undefined, Undefined, Undefined) #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(270)/            self.concat1((h1_PT_hd3, h2_PT_hd3, h3_Cat_hd3, hd4_UT_hd3, hd5_UT_hd3))))) # hd3->80*80*UpChannels/#[CNode]123
+    %76 = DoSignaturePrimitive::S-Prim-Concat{prim_type=1}[axis=I64(1)](%75)    #(Undefined) #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(270)/            self.concat1((h1_PT_hd3, h2_PT_hd3, h3_Cat_hd3, hd4_UT_hd3, hd5_UT_hd3))))) # hd3->80*80*UpChannels/#[CNode]124
+    %77 = FuncGraph::fg_125(%76)    #(Undefined)    # fg_125=construct.125 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(269)/        hd3 = self.relu3d_1(self.bn3d_1(self.conv3d_1(/#[CNode]126
+    %78 = FuncGraph::fg_127(%77)    #(Undefined)    # fg_127=construct.127 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(269)/        hd3 = self.relu3d_1(self.bn3d_1(self.conv3d_1(/#[CNode]128
+    %79 = FuncGraph::fg_129(%78)    #(Undefined)    # fg_129=construct.129 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(269)/        hd3 = self.relu3d_1(self.bn3d_1(self.conv3d_1(/#hd3
+    %80 = DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}(%79)    #(Undefined) #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(275)/                     self.ResizeBilinear(hd3, scale_factor=2, align_corners=True))))/#[CNode]130
+    %81 = DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}("scale_factor", "align_corners")    #(Undefined, Undefined) #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(275)/                     self.ResizeBilinear(hd3, scale_factor=2, align_corners=True))))/#[CNode]131
+    %82 = DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}(I64(2), Bool(1))    #(Undefined, Undefined) #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(275)/                     self.ResizeBilinear(hd3, scale_factor=2, align_corners=True))))/#[CNode]132
+    %83 = DoSignaturePrimitive::S-Prim-make_dict{prim_type=1}(%81, %82)    #(Undefined, Undefined) #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(275)/                     self.ResizeBilinear(hd3, scale_factor=2, align_corners=True))))/#[CNode]133
+    %84 = UnpackCall::unpack_call(FuncGraph::fg_89, %80, %83)    #(Undefined, Undefined, Undefined)    # fg_89=construct.89 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(275)/                     self.ResizeBilinear(hd3, scale_factor=2, align_corners=True))))/#[CNode]134
+    %85 = FuncGraph::fg_135(%84)    #(Undefined)    # fg_135=construct.135 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(274)/        hd3_UT_hd2 = self.hd3_UT_hd2_relu(self.hd3_UT_hd2_bn(self.hd3_UT_hd2_conv(\/#[CNode]136
+    %86 = FuncGraph::fg_137(%85)    #(Undefined)    # fg_137=construct.137 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(274)/        hd3_UT_hd2 = self.hd3_UT_hd2_relu(self.hd3_UT_hd2_bn(self.hd3_UT_hd2_conv(\/#[CNode]138
+    %87 = FuncGraph::fg_139(%86)    #(Undefined)    # fg_139=construct.139 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(274)/        hd3_UT_hd2 = self.hd3_UT_hd2_relu(self.hd3_UT_hd2_bn(self.hd3_UT_hd2_conv(\/#hd3_UT_hd2
+    %88 = DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}(%58)    #(Undefined) #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(277)/                     self.ResizeBilinear(hd4, scale_factor=4, align_corners=True))))/#[CNode]140
+    %89 = DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}("scale_factor", "align_corners")    #(Undefined, Undefined) #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(277)/                     self.ResizeBilinear(hd4, scale_factor=4, align_corners=True))))/#[CNode]141
+    %90 = DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}(I64(4), Bool(1))    #(Undefined, Undefined) #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(277)/                     self.ResizeBilinear(hd4, scale_factor=4, align_corners=True))))/#[CNode]142
+    %91 = DoSignaturePrimitive::S-Prim-make_dict{prim_type=1}(%89, %90)    #(Undefined, Undefined) #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(277)/                     self.ResizeBilinear(hd4, scale_factor=4, align_corners=True))))/#[CNode]143
+    %92 = UnpackCall::unpack_call(FuncGraph::fg_89, %88, %91)    #(Undefined, Undefined, Undefined)    # fg_89=construct.89 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(277)/                     self.ResizeBilinear(hd4, scale_factor=4, align_corners=True))))/#[CNode]144
+    %93 = FuncGraph::fg_145(%92)    #(Undefined)    # fg_145=construct.145 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(276)/        hd4_UT_hd2 = self.hd4_UT_hd2_relu(self.hd4_UT_hd2_bn(self.hd4_UT_hd2_conv(\/#[CNode]146
+    %94 = FuncGraph::fg_147(%93)    #(Undefined)    # fg_147=construct.147 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(276)/        hd4_UT_hd2 = self.hd4_UT_hd2_relu(self.hd4_UT_hd2_bn(self.hd4_UT_hd2_conv(\/#[CNode]148
+    %95 = FuncGraph::fg_149(%94)    #(Undefined)    # fg_149=construct.149 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(276)/        hd4_UT_hd2 = self.hd4_UT_hd2_relu(self.hd4_UT_hd2_bn(self.hd4_UT_hd2_conv(\/#hd4_UT_hd2
+    %96 = DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}(%45)    #(Undefined) #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(279)/                     self.ResizeBilinear(hd5, scale_factor=8, align_corners=True))))/#[CNode]150
+    %97 = DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}("scale_factor", "align_corners")    #(Undefined, Undefined) #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(279)/                     self.ResizeBilinear(hd5, scale_factor=8, align_corners=True))))/#[CNode]151
+    %98 = DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}(I64(8), Bool(1))    #(Undefined, Undefined) #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(279)/                     self.ResizeBilinear(hd5, scale_factor=8, align_corners=True))))/#[CNode]152
+    %99 = DoSignaturePrimitive::S-Prim-make_dict{prim_type=1}(%97, %98)    #(Undefined, Undefined) #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(279)/                     self.ResizeBilinear(hd5, scale_factor=8, align_corners=True))))/#[CNode]153
+    %100 = UnpackCall::unpack_call(FuncGraph::fg_89, %96, %99)    #(Undefined, Undefined, Undefined)    # fg_89=construct.89 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(279)/                     self.ResizeBilinear(hd5, scale_factor=8, align_corners=True))))/#[CNode]154
+    %101 = FuncGraph::fg_155(%100)    #(Undefined)    # fg_155=construct.155 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(278)/        hd5_UT_hd2 = self.hd5_UT_hd2_relu(self.hd5_UT_hd2_bn(self.hd5_UT_hd2_conv(\/#[CNode]156
+    %102 = FuncGraph::fg_157(%101)    #(Undefined)    # fg_157=construct.157 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(278)/        hd5_UT_hd2 = self.hd5_UT_hd2_relu(self.hd5_UT_hd2_bn(self.hd5_UT_hd2_conv(\/#[CNode]158
+    %103 = FuncGraph::fg_159(%102)    #(Undefined)    # fg_159=construct.159 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(278)/        hd5_UT_hd2 = self.hd5_UT_hd2_relu(self.hd5_UT_hd2_bn(self.hd5_UT_hd2_conv(\/#hd5_UT_hd2
+    %104 = DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}(%8, %13, %87, %95, %103)    #(Tensor(F32)[1, 16, 256, 256], Undefined, Undefined, Undefined, Undefined) #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(281)/            self.concat1((h1_PT_hd2, h2_Cat_hd2, hd3_UT_hd2, hd4_UT_hd2, hd5_UT_hd2))))) # hd2->160*160*UpChannels/#[CNode]160
+    %105 = DoSignaturePrimitive::S-Prim-Concat{prim_type=1}[axis=I64(1)](%104)    #(Undefined) #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(281)/            self.concat1((h1_PT_hd2, h2_Cat_hd2, hd3_UT_hd2, hd4_UT_hd2, hd5_UT_hd2))))) # hd2->160*160*UpChannels/#[CNode]161
+    %106 = FuncGraph::fg_162(%105)    #(Undefined)    # fg_162=construct.162 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(280)/        hd2 = self.relu2d_1(self.bn2d_1(self.conv2d_1(/#[CNode]163
+    %107 = FuncGraph::fg_164(%106)    #(Undefined)    # fg_164=construct.164 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(280)/        hd2 = self.relu2d_1(self.bn2d_1(self.conv2d_1(/#[CNode]165
+    %108 = FuncGraph::fg_166(%107)    #(Undefined)    # fg_166=construct.166 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(280)/        hd2 = self.relu2d_1(self.bn2d_1(self.conv2d_1(/#hd2
+    %109 = DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}(%108)    #(Undefined) #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(285)/                     self.ResizeBilinear(hd2, scale_factor=2, align_corners=True))))/#[CNode]167
+    %110 = DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}("scale_factor", "align_corners")    #(Undefined, Undefined) #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(285)/                     self.ResizeBilinear(hd2, scale_factor=2, align_corners=True))))/#[CNode]168
+    %111 = DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}(I64(2), Bool(1))    #(Undefined, Undefined) #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(285)/                     self.ResizeBilinear(hd2, scale_factor=2, align_corners=True))))/#[CNode]169
+    %112 = DoSignaturePrimitive::S-Prim-make_dict{prim_type=1}(%110, %111)    #(Undefined, Undefined) #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(285)/                     self.ResizeBilinear(hd2, scale_factor=2, align_corners=True))))/#[CNode]170
+    %113 = UnpackCall::unpack_call(FuncGraph::fg_89, %109, %112)    #(Undefined, Undefined, Undefined)    # fg_89=construct.89 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(285)/                     self.ResizeBilinear(hd2, scale_factor=2, align_corners=True))))/#[CNode]171
+    %114 = FuncGraph::fg_172(%113)    #(Undefined)    # fg_172=construct.172 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(284)/        hd2_UT_hd1 = self.hd2_UT_hd1_relu(self.hd2_UT_hd1_bn(self.hd2_UT_hd1_conv(\/#[CNode]173
+    %115 = FuncGraph::fg_174(%114)    #(Undefined)    # fg_174=construct.174 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(284)/        hd2_UT_hd1 = self.hd2_UT_hd1_relu(self.hd2_UT_hd1_bn(self.hd2_UT_hd1_conv(\/#[CNode]175
+    %116 = FuncGraph::fg_176(%115)    #(Undefined)    # fg_176=construct.176 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(284)/        hd2_UT_hd1 = self.hd2_UT_hd1_relu(self.hd2_UT_hd1_bn(self.hd2_UT_hd1_conv(\/#hd2_UT_hd1
+    %117 = DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}(%79)    #(Undefined) #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(287)/                     self.ResizeBilinear(hd3, scale_factor=4, align_corners=True))))/#[CNode]177
+    %118 = DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}("scale_factor", "align_corners")    #(Undefined, Undefined) #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(287)/                     self.ResizeBilinear(hd3, scale_factor=4, align_corners=True))))/#[CNode]178
+    %119 = DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}(I64(4), Bool(1))    #(Undefined, Undefined) #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(287)/                     self.ResizeBilinear(hd3, scale_factor=4, align_corners=True))))/#[CNode]179
+    %120 = DoSignaturePrimitive::S-Prim-make_dict{prim_type=1}(%118, %119)    #(Undefined, Undefined) #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(287)/                     self.ResizeBilinear(hd3, scale_factor=4, align_corners=True))))/#[CNode]180
+    %121 = UnpackCall::unpack_call(FuncGraph::fg_89, %117, %120)    #(Undefined, Undefined, Undefined)    # fg_89=construct.89 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(287)/                     self.ResizeBilinear(hd3, scale_factor=4, align_corners=True))))/#[CNode]181
+    %122 = FuncGraph::fg_182(%121)    #(Undefined)    # fg_182=construct.182 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(286)/        hd3_UT_hd1 = self.hd3_UT_hd1_relu(self.hd3_UT_hd1_bn(self.hd3_UT_hd1_conv(\/#[CNode]183
+    %123 = FuncGraph::fg_184(%122)    #(Undefined)    # fg_184=construct.184 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(286)/        hd3_UT_hd1 = self.hd3_UT_hd1_relu(self.hd3_UT_hd1_bn(self.hd3_UT_hd1_conv(\/#[CNode]185
+    %124 = FuncGraph::fg_186(%123)    #(Undefined)    # fg_186=construct.186 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(286)/        hd3_UT_hd1 = self.hd3_UT_hd1_relu(self.hd3_UT_hd1_bn(self.hd3_UT_hd1_conv(\/#hd3_UT_hd1
+    %125 = DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}(%58)    #(Undefined) #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(289)/                     self.ResizeBilinear(hd4, scale_factor=8, align_corners=True))))/#[CNode]187
+    %126 = DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}("scale_factor", "align_corners")    #(Undefined, Undefined) #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(289)/                     self.ResizeBilinear(hd4, scale_factor=8, align_corners=True))))/#[CNode]188
+    %127 = DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}(I64(8), Bool(1))    #(Undefined, Undefined) #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(289)/                     self.ResizeBilinear(hd4, scale_factor=8, align_corners=True))))/#[CNode]189
+    %128 = DoSignaturePrimitive::S-Prim-make_dict{prim_type=1}(%126, %127)    #(Undefined, Undefined) #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(289)/                     self.ResizeBilinear(hd4, scale_factor=8, align_corners=True))))/#[CNode]190
+    %129 = UnpackCall::unpack_call(FuncGraph::fg_89, %125, %128)    #(Undefined, Undefined, Undefined)    # fg_89=construct.89 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(289)/                     self.ResizeBilinear(hd4, scale_factor=8, align_corners=True))))/#[CNode]191
+    %130 = FuncGraph::fg_192(%129)    #(Undefined)    # fg_192=construct.192 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(288)/        hd4_UT_hd1 = self.hd4_UT_hd1_relu(self.hd4_UT_hd1_bn(self.hd4_UT_hd1_conv(\/#[CNode]193
+    %131 = FuncGraph::fg_194(%130)    #(Undefined)    # fg_194=construct.194 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(288)/        hd4_UT_hd1 = self.hd4_UT_hd1_relu(self.hd4_UT_hd1_bn(self.hd4_UT_hd1_conv(\/#[CNode]195
+    %132 = FuncGraph::fg_196(%131)    #(Undefined)    # fg_196=construct.196 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(288)/        hd4_UT_hd1 = self.hd4_UT_hd1_relu(self.hd4_UT_hd1_bn(self.hd4_UT_hd1_conv(\/#hd4_UT_hd1
+    %133 = DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}(%45)    #(Undefined) #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(291)/                     self.ResizeBilinear(hd5, scale_factor=16, align_corners=True))))/#[CNode]197
+    %134 = DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}("scale_factor", "align_corners")    #(Undefined, Undefined) #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(291)/                     self.ResizeBilinear(hd5, scale_factor=16, align_corners=True))))/#[CNode]198
+    %135 = DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}(I64(16), Bool(1))    #(Undefined, Undefined) #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(291)/                     self.ResizeBilinear(hd5, scale_factor=16, align_corners=True))))/#[CNode]199
+    %136 = DoSignaturePrimitive::S-Prim-make_dict{prim_type=1}(%134, %135)    #(Undefined, Undefined) #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(291)/                     self.ResizeBilinear(hd5, scale_factor=16, align_corners=True))))/#[CNode]200
+    %137 = UnpackCall::unpack_call(FuncGraph::fg_89, %133, %136)    #(Undefined, Undefined, Undefined)    # fg_89=construct.89 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(291)/                     self.ResizeBilinear(hd5, scale_factor=16, align_corners=True))))/#[CNode]201
+    %138 = FuncGraph::fg_202(%137)    #(Undefined)    # fg_202=construct.202 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(290)/        hd5_UT_hd1 = self.hd5_UT_hd1_relu(self.hd5_UT_hd1_bn(self.hd5_UT_hd1_conv(\/#[CNode]203
+    %139 = FuncGraph::fg_204(%138)    #(Undefined)    # fg_204=construct.204 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(290)/        hd5_UT_hd1 = self.hd5_UT_hd1_relu(self.hd5_UT_hd1_bn(self.hd5_UT_hd1_conv(\/#[CNode]205
+    %140 = FuncGraph::fg_206(%139)    #(Undefined)    # fg_206=construct.206 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(290)/        hd5_UT_hd1 = self.hd5_UT_hd1_relu(self.hd5_UT_hd1_bn(self.hd5_UT_hd1_conv(\/#hd5_UT_hd1
+    %141 = DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}(%4, %116, %124, %132, %140)    #(Tensor(F32)[1, 16, 512, 512], Undefined, Undefined, Undefined, Undefined) #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(293)/            self.concat1((h1_Cat_hd1, hd2_UT_hd1, hd3_UT_hd1, hd4_UT_hd1, hd5_UT_hd1))))) # hd1->320*320*UpChannels/#[CNode]207
+    %142 = DoSignaturePrimitive::S-Prim-Concat{prim_type=1}[axis=I64(1)](%141)    #(Undefined) #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(293)/            self.concat1((h1_Cat_hd1, hd2_UT_hd1, hd3_UT_hd1, hd4_UT_hd1, hd5_UT_hd1))))) # hd1->320*320*UpChannels/#[CNode]208
+    %143 = FuncGraph::fg_209(%142)    #(Undefined)    # fg_209=construct.209 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(292)/        hd1 = self.relu1d_1(self.bn1d_1(self.conv1d_1(/#[CNode]210
+    %144 = FuncGraph::fg_211(%143)    #(Undefined)    # fg_211=construct.211 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(292)/        hd1 = self.relu1d_1(self.bn1d_1(self.conv1d_1(/#[CNode]212
+    %145 = FuncGraph::fg_213(%144)    #(Undefined)    # fg_213=construct.213 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(292)/        hd1 = self.relu1d_1(self.bn1d_1(self.conv1d_1(/#hd1
+    %146 = FuncGraph::fg_214(%145)    #(Undefined)    # fg_214=construct.214 #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(295)/        d1 = self.outconv1(hd1)  # d1->320*320*n_classes/#d1
+    Primitive::Return{prim_type=1}(%146)    #(Undefined) #scope: Default
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(296)/        return d1 # [batch, n_classes, H, W]/#[CNode]215
+}
+# order:
+#   1: construct.6:h1{[0]: ValueNode<FuncGraph> construct.15, [1]: inputs}
+#   2: construct.6:h2{[0]: ValueNode<FuncGraph> construct.28, [1]: h1}
+#   3: construct.6:h2{[0]: ValueNode<FuncGraph> construct.7, [1]: h2}
+#   4: construct.6:h3{[0]: ValueNode<FuncGraph> construct.48, [1]: h2}
+#   5: construct.6:h3{[0]: ValueNode<FuncGraph> construct.49, [1]: h3}
+#   6: construct.6:h4{[0]: ValueNode<FuncGraph> construct.76, [1]: h3}
+#   7: construct.6:h4{[0]: ValueNode<FuncGraph> construct.77, [1]: h4}
+#   8: construct.6:h5{[0]: ValueNode<FuncGraph> construct.83, [1]: h4}
+#   9: construct.6:hd5{[0]: ValueNode<FuncGraph> construct.84, [1]: h5}
+#  10: construct.6:[CNode]56{[0]: ValueNode<FuncGraph> construct.55, [1]: h1}
+#  11: construct.6:[CNode]58{[0]: ValueNode<FuncGraph> construct.57, [1]: [CNode]56}
+#  12: construct.6:[CNode]60{[0]: ValueNode<FuncGraph> construct.59, [1]: [CNode]58}
+#  13: construct.6:h1_PT_hd4{[0]: ValueNode<FuncGraph> construct.61, [1]: [CNode]60}
+#  14: construct.6:[CNode]63{[0]: ValueNode<FuncGraph> construct.62, [1]: h2}
+#  15: construct.6:[CNode]65{[0]: ValueNode<FuncGraph> construct.64, [1]: [CNode]63}
+#  16: construct.6:[CNode]67{[0]: ValueNode<FuncGraph> construct.66, [1]: [CNode]65}
+#  17: construct.6:h2_PT_hd4{[0]: ValueNode<FuncGraph> construct.68, [1]: [CNode]67}
+#  18: construct.6:[CNode]70{[0]: ValueNode<FuncGraph> construct.69, [1]: h3}
+#  19: construct.6:[CNode]72{[0]: ValueNode<FuncGraph> construct.71, [1]: [CNode]70}
+#  20: construct.6:[CNode]74{[0]: ValueNode<FuncGraph> construct.73, [1]: [CNode]72}
+#  21: construct.6:h3_PT_hd4{[0]: ValueNode<FuncGraph> construct.75, [1]: [CNode]74}
+#  22: construct.6:[CNode]79{[0]: ValueNode<FuncGraph> construct.78, [1]: h4}
+#  23: construct.6:[CNode]81{[0]: ValueNode<FuncGraph> construct.80, [1]: [CNode]79}
+#  24: construct.6:h4_Cat_hd4{[0]: ValueNode<FuncGraph> construct.82, [1]: [CNode]81}
+#  25: construct.6:[CNode]85{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: hd5}
+#  26: construct.6:[CNode]86{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: ValueNode<StringImm> scale_factor, [2]: ValueNode<StringImm> align_corners}
+#  27: construct.6:[CNode]87{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: ValueNode<Int64Imm> 2, [2]: ValueNode<BoolImm> true}
+#  28: construct.6:[CNode]88{[0]: ValueNode<DoSignaturePrimitive> S-Prim-make_dict, [1]: [CNode]86, [2]: [CNode]87}
+#  29: construct.6:[CNode]90{[0]: ValueNode<UnpackCall> unpack_call.216, [1]: ValueNode<FuncGraph> construct.89, [2]: [CNode]85, [3]: [CNode]88}
+#  30: construct.6:[CNode]92{[0]: ValueNode<FuncGraph> construct.91, [1]: [CNode]90}
+#  31: construct.6:[CNode]94{[0]: ValueNode<FuncGraph> construct.93, [1]: [CNode]92}
+#  32: construct.6:hd5_UT_hd4{[0]: ValueNode<FuncGraph> construct.95, [1]: [CNode]94}
+#  33: construct.6:[CNode]96{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: h1_PT_hd4, [2]: h2_PT_hd4, [3]: h3_PT_hd4, [4]: h4_Cat_hd4, [5]: hd5_UT_hd4}
+#  34: construct.6:[CNode]97{[0]: ValueNode<DoSignaturePrimitive> S-Prim-Concat, [1]: [CNode]96}
+#  35: construct.6:[CNode]99{[0]: ValueNode<FuncGraph> construct.98, [1]: [CNode]97}
+#  36: construct.6:[CNode]101{[0]: ValueNode<FuncGraph> construct.100, [1]: [CNode]99}
+#  37: construct.6:hd4{[0]: ValueNode<FuncGraph> construct.102, [1]: [CNode]101}
+#  38: construct.6:[CNode]35{[0]: ValueNode<FuncGraph> construct.34, [1]: h1}
+#  39: construct.6:[CNode]37{[0]: ValueNode<FuncGraph> construct.36, [1]: [CNode]35}
+#  40: construct.6:[CNode]39{[0]: ValueNode<FuncGraph> construct.38, [1]: [CNode]37}
+#  41: construct.6:h1_PT_hd3{[0]: ValueNode<FuncGraph> construct.40, [1]: [CNode]39}
+#  42: construct.6:[CNode]42{[0]: ValueNode<FuncGraph> construct.41, [1]: h2}
+#  43: construct.6:[CNode]44{[0]: ValueNode<FuncGraph> construct.43, [1]: [CNode]42}
+#  44: construct.6:[CNode]46{[0]: ValueNode<FuncGraph> construct.45, [1]: [CNode]44}
+#  45: construct.6:h2_PT_hd3{[0]: ValueNode<FuncGraph> construct.47, [1]: [CNode]46}
+#  46: construct.6:[CNode]51{[0]: ValueNode<FuncGraph> construct.50, [1]: h3}
+#  47: construct.6:[CNode]53{[0]: ValueNode<FuncGraph> construct.52, [1]: [CNode]51}
+#  48: construct.6:h3_Cat_hd3{[0]: ValueNode<FuncGraph> construct.54, [1]: [CNode]53}
+#  49: construct.6:[CNode]103{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: hd4}
+#  50: construct.6:[CNode]104{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: ValueNode<StringImm> scale_factor, [2]: ValueNode<StringImm> align_corners}
+#  51: construct.6:[CNode]105{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: ValueNode<Int64Imm> 2, [2]: ValueNode<BoolImm> true}
+#  52: construct.6:[CNode]106{[0]: ValueNode<DoSignaturePrimitive> S-Prim-make_dict, [1]: [CNode]104, [2]: [CNode]105}
+#  53: construct.6:[CNode]107{[0]: ValueNode<UnpackCall> unpack_call.217, [1]: ValueNode<FuncGraph> construct.89, [2]: [CNode]103, [3]: [CNode]106}
+#  54: construct.6:[CNode]109{[0]: ValueNode<FuncGraph> construct.108, [1]: [CNode]107}
+#  55: construct.6:[CNode]111{[0]: ValueNode<FuncGraph> construct.110, [1]: [CNode]109}
+#  56: construct.6:hd4_UT_hd3{[0]: ValueNode<FuncGraph> construct.112, [1]: [CNode]111}
+#  57: construct.6:[CNode]113{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: hd5}
+#  58: construct.6:[CNode]114{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: ValueNode<StringImm> scale_factor, [2]: ValueNode<StringImm> align_corners}
+#  59: construct.6:[CNode]115{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: ValueNode<Int64Imm> 4, [2]: ValueNode<BoolImm> true}
+#  60: construct.6:[CNode]116{[0]: ValueNode<DoSignaturePrimitive> S-Prim-make_dict, [1]: [CNode]114, [2]: [CNode]115}
+#  61: construct.6:[CNode]117{[0]: ValueNode<UnpackCall> unpack_call.218, [1]: ValueNode<FuncGraph> construct.89, [2]: [CNode]113, [3]: [CNode]116}
+#  62: construct.6:[CNode]119{[0]: ValueNode<FuncGraph> construct.118, [1]: [CNode]117}
+#  63: construct.6:[CNode]121{[0]: ValueNode<FuncGraph> construct.120, [1]: [CNode]119}
+#  64: construct.6:hd5_UT_hd3{[0]: ValueNode<FuncGraph> construct.122, [1]: [CNode]121}
+#  65: construct.6:[CNode]123{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: h1_PT_hd3, [2]: h2_PT_hd3, [3]: h3_Cat_hd3, [4]: hd4_UT_hd3, [5]: hd5_UT_hd3}
+#  66: construct.6:[CNode]124{[0]: ValueNode<DoSignaturePrimitive> S-Prim-Concat, [1]: [CNode]123}
+#  67: construct.6:[CNode]126{[0]: ValueNode<FuncGraph> construct.125, [1]: [CNode]124}
+#  68: construct.6:[CNode]128{[0]: ValueNode<FuncGraph> construct.127, [1]: [CNode]126}
+#  69: construct.6:hd3{[0]: ValueNode<FuncGraph> construct.129, [1]: [CNode]128}
+#  70: construct.6:[CNode]22{[0]: ValueNode<FuncGraph> construct.21, [1]: h1}
+#  71: construct.6:[CNode]24{[0]: ValueNode<FuncGraph> construct.23, [1]: [CNode]22}
+#  72: construct.6:[CNode]26{[0]: ValueNode<FuncGraph> construct.25, [1]: [CNode]24}
+#  73: construct.6:h1_PT_hd2{[0]: ValueNode<FuncGraph> construct.27, [1]: [CNode]26}
+#  74: construct.6:[CNode]30{[0]: ValueNode<FuncGraph> construct.29, [1]: h2}
+#  75: construct.6:[CNode]32{[0]: ValueNode<FuncGraph> construct.31, [1]: [CNode]30}
+#  76: construct.6:h2_Cat_hd2{[0]: ValueNode<FuncGraph> construct.33, [1]: [CNode]32}
+#  77: construct.6:[CNode]130{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: hd3}
+#  78: construct.6:[CNode]131{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: ValueNode<StringImm> scale_factor, [2]: ValueNode<StringImm> align_corners}
+#  79: construct.6:[CNode]132{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: ValueNode<Int64Imm> 2, [2]: ValueNode<BoolImm> true}
+#  80: construct.6:[CNode]133{[0]: ValueNode<DoSignaturePrimitive> S-Prim-make_dict, [1]: [CNode]131, [2]: [CNode]132}
+#  81: construct.6:[CNode]134{[0]: ValueNode<UnpackCall> unpack_call.219, [1]: ValueNode<FuncGraph> construct.89, [2]: [CNode]130, [3]: [CNode]133}
+#  82: construct.6:[CNode]136{[0]: ValueNode<FuncGraph> construct.135, [1]: [CNode]134}
+#  83: construct.6:[CNode]138{[0]: ValueNode<FuncGraph> construct.137, [1]: [CNode]136}
+#  84: construct.6:hd3_UT_hd2{[0]: ValueNode<FuncGraph> construct.139, [1]: [CNode]138}
+#  85: construct.6:[CNode]140{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: hd4}
+#  86: construct.6:[CNode]141{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: ValueNode<StringImm> scale_factor, [2]: ValueNode<StringImm> align_corners}
+#  87: construct.6:[CNode]142{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: ValueNode<Int64Imm> 4, [2]: ValueNode<BoolImm> true}
+#  88: construct.6:[CNode]143{[0]: ValueNode<DoSignaturePrimitive> S-Prim-make_dict, [1]: [CNode]141, [2]: [CNode]142}
+#  89: construct.6:[CNode]144{[0]: ValueNode<UnpackCall> unpack_call.220, [1]: ValueNode<FuncGraph> construct.89, [2]: [CNode]140, [3]: [CNode]143}
+#  90: construct.6:[CNode]146{[0]: ValueNode<FuncGraph> construct.145, [1]: [CNode]144}
+#  91: construct.6:[CNode]148{[0]: ValueNode<FuncGraph> construct.147, [1]: [CNode]146}
+#  92: construct.6:hd4_UT_hd2{[0]: ValueNode<FuncGraph> construct.149, [1]: [CNode]148}
+#  93: construct.6:[CNode]150{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: hd5}
+#  94: construct.6:[CNode]151{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: ValueNode<StringImm> scale_factor, [2]: ValueNode<StringImm> align_corners}
+#  95: construct.6:[CNode]152{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: ValueNode<Int64Imm> 8, [2]: ValueNode<BoolImm> true}
+#  96: construct.6:[CNode]153{[0]: ValueNode<DoSignaturePrimitive> S-Prim-make_dict, [1]: [CNode]151, [2]: [CNode]152}
+#  97: construct.6:[CNode]154{[0]: ValueNode<UnpackCall> unpack_call.221, [1]: ValueNode<FuncGraph> construct.89, [2]: [CNode]150, [3]: [CNode]153}
+#  98: construct.6:[CNode]156{[0]: ValueNode<FuncGraph> construct.155, [1]: [CNode]154}
+#  99: construct.6:[CNode]158{[0]: ValueNode<FuncGraph> construct.157, [1]: [CNode]156}
+# 100: construct.6:hd5_UT_hd2{[0]: ValueNode<FuncGraph> construct.159, [1]: [CNode]158}
+# 101: construct.6:[CNode]160{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: h1_PT_hd2, [2]: h2_Cat_hd2, [3]: hd3_UT_hd2, [4]: hd4_UT_hd2, [5]: hd5_UT_hd2}
+# 102: construct.6:[CNode]161{[0]: ValueNode<DoSignaturePrimitive> S-Prim-Concat, [1]: [CNode]160}
+# 103: construct.6:[CNode]163{[0]: ValueNode<FuncGraph> construct.162, [1]: [CNode]161}
+# 104: construct.6:[CNode]165{[0]: ValueNode<FuncGraph> construct.164, [1]: [CNode]163}
+# 105: construct.6:hd2{[0]: ValueNode<FuncGraph> construct.166, [1]: [CNode]165}
+# 106: construct.6:[CNode]17{[0]: ValueNode<FuncGraph> construct.16, [1]: h1}
+# 107: construct.6:[CNode]19{[0]: ValueNode<FuncGraph> construct.18, [1]: [CNode]17}
+# 108: construct.6:h1_Cat_hd1{[0]: ValueNode<FuncGraph> construct.20, [1]: [CNode]19}
+# 109: construct.6:[CNode]167{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: hd2}
+# 110: construct.6:[CNode]168{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: ValueNode<StringImm> scale_factor, [2]: ValueNode<StringImm> align_corners}
+# 111: construct.6:[CNode]169{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: ValueNode<Int64Imm> 2, [2]: ValueNode<BoolImm> true}
+# 112: construct.6:[CNode]170{[0]: ValueNode<DoSignaturePrimitive> S-Prim-make_dict, [1]: [CNode]168, [2]: [CNode]169}
+# 113: construct.6:[CNode]171{[0]: ValueNode<UnpackCall> unpack_call.222, [1]: ValueNode<FuncGraph> construct.89, [2]: [CNode]167, [3]: [CNode]170}
+# 114: construct.6:[CNode]173{[0]: ValueNode<FuncGraph> construct.172, [1]: [CNode]171}
+# 115: construct.6:[CNode]175{[0]: ValueNode<FuncGraph> construct.174, [1]: [CNode]173}
+# 116: construct.6:hd2_UT_hd1{[0]: ValueNode<FuncGraph> construct.176, [1]: [CNode]175}
+# 117: construct.6:[CNode]177{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: hd3}
+# 118: construct.6:[CNode]178{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: ValueNode<StringImm> scale_factor, [2]: ValueNode<StringImm> align_corners}
+# 119: construct.6:[CNode]179{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: ValueNode<Int64Imm> 4, [2]: ValueNode<BoolImm> true}
+# 120: construct.6:[CNode]180{[0]: ValueNode<DoSignaturePrimitive> S-Prim-make_dict, [1]: [CNode]178, [2]: [CNode]179}
+# 121: construct.6:[CNode]181{[0]: ValueNode<UnpackCall> unpack_call.223, [1]: ValueNode<FuncGraph> construct.89, [2]: [CNode]177, [3]: [CNode]180}
+# 122: construct.6:[CNode]183{[0]: ValueNode<FuncGraph> construct.182, [1]: [CNode]181}
+# 123: construct.6:[CNode]185{[0]: ValueNode<FuncGraph> construct.184, [1]: [CNode]183}
+# 124: construct.6:hd3_UT_hd1{[0]: ValueNode<FuncGraph> construct.186, [1]: [CNode]185}
+# 125: construct.6:[CNode]187{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: hd4}
+# 126: construct.6:[CNode]188{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: ValueNode<StringImm> scale_factor, [2]: ValueNode<StringImm> align_corners}
+# 127: construct.6:[CNode]189{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: ValueNode<Int64Imm> 8, [2]: ValueNode<BoolImm> true}
+# 128: construct.6:[CNode]190{[0]: ValueNode<DoSignaturePrimitive> S-Prim-make_dict, [1]: [CNode]188, [2]: [CNode]189}
+# 129: construct.6:[CNode]191{[0]: ValueNode<UnpackCall> unpack_call.224, [1]: ValueNode<FuncGraph> construct.89, [2]: [CNode]187, [3]: [CNode]190}
+# 130: construct.6:[CNode]193{[0]: ValueNode<FuncGraph> construct.192, [1]: [CNode]191}
+# 131: construct.6:[CNode]195{[0]: ValueNode<FuncGraph> construct.194, [1]: [CNode]193}
+# 132: construct.6:hd4_UT_hd1{[0]: ValueNode<FuncGraph> construct.196, [1]: [CNode]195}
+# 133: construct.6:[CNode]197{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: hd5}
+# 134: construct.6:[CNode]198{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: ValueNode<StringImm> scale_factor, [2]: ValueNode<StringImm> align_corners}
+# 135: construct.6:[CNode]199{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: ValueNode<Int64Imm> 16, [2]: ValueNode<BoolImm> true}
+# 136: construct.6:[CNode]200{[0]: ValueNode<DoSignaturePrimitive> S-Prim-make_dict, [1]: [CNode]198, [2]: [CNode]199}
+# 137: construct.6:[CNode]201{[0]: ValueNode<UnpackCall> unpack_call.225, [1]: ValueNode<FuncGraph> construct.89, [2]: [CNode]197, [3]: [CNode]200}
+# 138: construct.6:[CNode]203{[0]: ValueNode<FuncGraph> construct.202, [1]: [CNode]201}
+# 139: construct.6:[CNode]205{[0]: ValueNode<FuncGraph> construct.204, [1]: [CNode]203}
+# 140: construct.6:hd5_UT_hd1{[0]: ValueNode<FuncGraph> construct.206, [1]: [CNode]205}
+# 141: construct.6:[CNode]207{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: h1_Cat_hd1, [2]: hd2_UT_hd1, [3]: hd3_UT_hd1, [4]: hd4_UT_hd1, [5]: hd5_UT_hd1}
+# 142: construct.6:[CNode]208{[0]: ValueNode<DoSignaturePrimitive> S-Prim-Concat, [1]: [CNode]207}
+# 143: construct.6:[CNode]210{[0]: ValueNode<FuncGraph> construct.209, [1]: [CNode]208}
+# 144: construct.6:[CNode]212{[0]: ValueNode<FuncGraph> construct.211, [1]: [CNode]210}
+# 145: construct.6:hd1{[0]: ValueNode<FuncGraph> construct.213, [1]: [CNode]212}
+# 146: construct.6:d1{[0]: ValueNode<FuncGraph> construct.214, [1]: hd1}
+# 147: construct.6:[CNode]215{[0]: ValueNode<Primitive> Return, [1]: d1}
+
+
+# [No.3] construct.7
+# In file D:\Document\Coding\ui-project\models\unet3plus.py(37)/    def construct(self, inputs):/
+funcgraph fg_7[fg_1](
+        %para174 : Tensor(F32)[1, 16, 256, 256]    # inputs
+    ) {
+
+#------------------------> 2
+    %1 = FuncGraph::fg_8(%para174)    #(Tensor(F32)[1, 16, 256, 256])    # fg_8=construct.8 #scope: Default/conv2-unetConv2
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(39)/        return self.conv(inputs)/#[CNode]226
+    Primitive::Return{prim_type=1}(%1)    #(Undefined) #scope: Default/conv2-unetConv2
+      # In file D:\Document\Coding\ui-project\models\unet3plus.py(39)/        return self.conv(inputs)/#[CNode]227
+}
+# order:
+#   1: construct.7:[CNode]226{[0]: ValueNode<FuncGraph> construct.8, [1]: inputs}
+#   2: construct.7:[CNode]227{[0]: ValueNode<Primitive> Return, [1]: [CNode]226}
+
+
+# [No.4] construct.8
+# In file D:\Document\Coding\ui-project\venv\lib\site-packages\mindspore\nn\layer\container.py(274)/    def construct(self, input_data):/
+funcgraph fg_8[fg_1](
+        %para175 : Tensor(F32)[1, 16, 256, 256]    # input_data
+    ) {
+
+#------------------------> 3
+    %1 = FuncGraph::fg_9(I64(0), %para175)    #(I64, Tensor(F32)[1, 16, 256, 256])    # fg_9=⤾construct.9 #scope: Default/conv2-unetConv2/conv-SequentialCell
+      # In file D:\Document\Coding\ui-project\venv\lib\site-packages\mindspore\nn\layer\container.py(275)/        for cell in self.cell_list:/#[CNode]228
+    Primitive::Return{prim_type=1}(%1)    #(Undefined) #scope: Default/conv2-unetConv2/conv-SequentialCell
+      # In file D:\Document\Coding\ui-project\venv\lib\site-packages\mindspore\nn\layer\container.py(275)/        for cell in self.cell_list:/#[CNode]229
+}
+# order:
+#   1: construct.8:[CNode]230{[0]: ValueNode<FuncGraph> ms_len.231, [1]: [CNode]232}
+#   2: construct.8:[CNode]228{[0]: ValueNode<FuncGraph> ⤾construct.9, [1]: ValueNode<Int64Imm> 0, [2]: input_data}
+#   3: construct.8:[CNode]229{[0]: ValueNode<Primitive> Return, [1]: [CNode]228}
+
+
+# [No.5] ⤾construct.9
+# In file D:\Document\Coding\ui-project\venv\lib\site-packages\mindspore\nn\layer\container.py(275)/        for cell in self.cell_list:/
+funcgraph fg_9[fg_8](
+        %para176 : I64    # @[CNode]10
+        , %para177 : Tensor(F32)[1, 16, 256, 256]    # Φinput_data
+    ) {
+    %1 : $(construct.8):Tuple[Func*6] = Primitive::MakeTuple{prim_type=1}(FuncGraph::fg_233, FuncGraph::fg_234, FuncGraph::fg_235, FuncGraph::fg_236, FuncGraph::fg_237, FuncGraph::fg_238)    #(Func, Func, Func, Func, Func, Func)    # fg_233=construct.233, fg_234=construct.234, fg_235=construct.235, fg_236=construct.236, fg_237=construct.237, fg_238=construct.238 #scope: Default/conv2-unetConv2/conv-SequentialCell
+      # In file D:\Document\Coding\ui-project\venv\lib\site-packages\mindspore\nn\layer\container.py(275)/        for cell in self.cell_list:/#[CNode]232
+    %2 : $(construct.8):I64 = FuncGraph::fg_231(%1)    #(Tuple[Func*6])    # fg_231=ms_len.231 #scope: Default/conv2-unetConv2/conv-SequentialCell
+      # In file D:\Document\Coding\ui-project\venv\lib\site-packages\mindspore\nn\layer\container.py(275)/        for cell in self.cell_list:/#[CNode]230
+    %3 : Bool = MultitypeFuncGraph::less{(Tensor, Number), (Number, Tensor), (Number, Number), (Tensor, Tensor)}(%para176, %2)    #(I64, I64) #scope: Default/conv2-unetConv2/conv-SequentialCell
+      # In file D:\Document\Coding\ui-project\venv\lib\site-packages\mindspore\nn\layer\container.py(275)/        for cell in self.cell_list:/#[CNode]239
+    %4 : Func = Primitive::Switch{prim_type=1}(%3, FuncGraph::fg_11, FuncGraph::fg_240)    #(Bool, Func, Func)    # fg_11=⥁construct.11, fg_240=↓construct.240 #scope: Default/conv2-unetConv2/conv-SequentialCell
+      # In file D:\Document\Coding\ui-project\venv\lib\site-packages\mindspore\nn\layer\container.py(275)/        for cell in self.cell_list:/#[CNode]241
+
+#------------------------> 6
+    %5 = %4() #scope: Default/conv2-unetConv2/conv-SequentialCell
+      # In file D:\Document\Coding\ui-project\venv\lib\site-packages\mindspore\nn\layer\container.py(275)/        for cell in self.cell_list:/#[CNode]242
+    Primitive::Return{prim_type=1}(%5)    #(Undefined) #scope: Default/conv2-unetConv2/conv-SequentialCell
+      # In file D:\Document\Coding\ui-project\venv\lib\site-packages\mindspore\nn\layer\container.py(275)/        for cell in self.cell_list:/#[CNode]243
+}
+# order:
+#   1: ⤾construct.9:[CNode]239{[0]: ValueNode<MultitypeFuncGraph> less.244, [1]: @[CNode]10, [2]: [CNode]230}
+#   2: ⤾construct.9:[CNode]241{[0]: ValueNode<Primitive> Switch, [1]: [CNode]239, [2]: ValueNode<FuncGraph> ⥁construct.11, [3]: ValueNode<FuncGraph> ↓construct.240}
+#   3: ⤾construct.9:[CNode]242{[0]: [CNode]241}
+#   4: ⤾construct.9:[CNode]243{[0]: ValueNode<Primitive> Return, [1]: [CNode]242}
+
+
+# [No.6] ⥁construct.11
+# In file D:\Document\Coding\ui-project\venv\lib\site-packages\mindspore\nn\layer\container.py(275)/        for cell in self.cell_list:/
+funcgraph fg_11[fg_9](
+) {
+
+#------------------------> 7
+    %1 : I64 = MultitypeFuncGraph::add{(Tuple, Tuple), (RowTensor, Tensor), (Tensor, Tensor), (List, List), (Tensor, List), (List, Tensor), (String, String), (Tuple, Tensor), (NoneType, NoneType), (Number, Number), (Number, Tensor), (Tensor, Number), (Tensor, Tuple)}(%para176, I64(1))    #(I64, I64) #scope: Default/conv2-unetConv2/conv-SequentialCell
+      # In file D:\Document\Coding\ui-project\venv\lib\site-packages\mindspore\nn\layer\container.py(275)/        for cell in self.cell_list:/#[CNode]10
+    %2 : $(construct.8):Tuple[Func*6] = Primitive::MakeTuple{prim_type=1}(FuncGraph::fg_233, FuncGraph::fg_234, FuncGraph::fg_235, FuncGraph::fg_236, FuncGraph::fg_237, FuncGraph::fg_238)    #(Func, Func, Func, Func, Func, Func)    # fg_233=construct.233, fg_234=construct.234, fg_235=construct.235, fg_236=construct.236, fg_237=construct.237, fg_238=construct.238 #scope: Default/conv2-unetConv2/conv-SequentialCell
+      # In file D:\Document\Coding\ui-project\venv\lib\site-packages\mindspore\nn\layer\container.py(275)/        for cell in self.cell_list:/#[CNode]232
+    %3 : Func = DoSignaturePrimitive::S-Prim-getitem{prim_type=1}(%2, %para176)    #(Tuple[Func*6], I64) #scope: Default/conv2-unetConv2/conv-SequentialCell
+      # In file D:\Document\Coding\ui-project\venv\lib\site-packages\mindspore\nn\layer\container.py(275)/        for cell in self.cell_list:/#cell
+    %4 : Tensor(F32)[1, 32, 256, 256] = %3(%para177)    #(Tensor(F32)[1, 16, 256, 256]) #scope: Default/conv2-unetConv2/conv-SequentialCell
+      # In file D:\Document\Coding\ui-project\venv\lib\site-packages\mindspore\nn\layer\container.py(276)/            input_data = cell(input_data)/#input_data
+
+#------------------------> 5
+    %5 = FuncGraph::fg_9(%1, %4)    #(I64, Tensor(F32)[1, 32, 256, 256])    # fg_9=⤾construct.9 #scope: Default/conv2-unetConv2/conv-SequentialCell
+      # In file D:\Document\Coding\ui-project\venv\lib\site-packages\mindspore\nn\layer\container.py(275)/        for cell in self.cell_list:/#[CNode]245
+    Primitive::Return{prim_type=1}(%5)    #(Undefined) #scope: Default/conv2-unetConv2/conv-SequentialCell
+      # In file D:\Document\Coding\ui-project\venv\lib\site-packages\mindspore\nn\layer\container.py(275)/        for cell in self.cell_list:/#[CNode]246
+}
+# order:
+#   1: ⥁construct.11:cell{[0]: ValueNode<DoSignaturePrimitive> S-Prim-getitem, [1]: [CNode]232, [2]: @[CNode]10}
+#   2: ⥁construct.11:[CNode]10{[0]: ValueNode<MultitypeFuncGraph> add.247, [1]: @[CNode]10, [2]: ValueNode<Int64Imm> 1}
+#   3: ⥁construct.11:input_data{[0]: cell, [1]: Φinput_data}
+#   4: ⥁construct.11:[CNode]245{[0]: ValueNode<FuncGraph> ⤾construct.9, [1]: [CNode]10, [2]: input_data}
+#   5: ⥁construct.11:[CNode]246{[0]: ValueNode<Primitive> Return, [1]: [CNode]245}
+
+
+# [No.7] _scalar_add_scalar.12
+# In file D:\Document\Coding\ui-project\venv\lib\site-packages\mindspore\ops\composite\multitype_ops\add_impl.py(60)/def _scalar_add_scalar(x, y):/
+funcgraph fg_12(
+        %para178 : I64    # x
+        , %para179 : I64    # y
+    ) {
+
+#------------------------> 8
+    %1 = Primitive::resolve{prim_type=1}(NameSpace::SymbolStr, F)    #(ExternalType, ExternalType) #scope: Default/conv2-unetConv2/conv-SequentialCell
+      # In file D:\Document\Coding\ui-project\venv\lib\site-packages\mindspore\ops\composite\multitype_ops\add_impl.py(71)/    return F.scalar_add(x, y)/#[CNode]248
+    %2 = Primitive::getattr{prim_type=1}(%1, "scalar_add")    #(Undefined, String) #scope: Default/conv2-unetConv2/conv-SequentialCell
+      # In file D:\Document\Coding\ui-project\venv\lib\site-packages\mindspore\ops\composite\multitype_ops\add_impl.py(71)/    return F.scalar_add(x, y)/#[CNode]249
+    %3 = %2(%para178, %para179)    #(I64, I64) #scope: Default/conv2-unetConv2/conv-SequentialCell
+      # In file D:\Document\Coding\ui-project\venv\lib\site-packages\mindspore\ops\composite\multitype_ops\add_impl.py(71)/    return F.scalar_add(x, y)/#[CNode]250
+    Primitive::Return{prim_type=1}(%3)    #(Undefined) #scope: Default/conv2-unetConv2/conv-SequentialCell
+      # In file D:\Document\Coding\ui-project\venv\lib\site-packages\mindspore\ops\composite\multitype_ops\add_impl.py(71)/    return F.scalar_add(x, y)/#[CNode]251
+}
+# order:
+#   1: _scalar_add_scalar.12:[CNode]248{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> SymbolStr: 'Namespace:mindspore.ops.composite.multitype_ops.add_impl', [2]: ValueNode<Symbol> F}
+#   2: _scalar_add_scalar.12:[CNode]249{[0]: ValueNode<Primitive> getattr, [1]: [CNode]248, [2]: ValueNode<StringImm> scalar_add}
+#   3: _scalar_add_scalar.252:[CNode]253{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> CommonOPS: 'Namespace:mindspore._extends.parse.trope', [2]: ValueNode<Symbol> MakeTuple}
+#   4: _scalar_add_scalar.252:[CNode]254{[0]: [CNode]253, [1]: x, [2]: y}
+#   5: _scalar_add_scalar.12:[CNode]250{[0]: [CNode]249, [1]: x, [2]: y}
+#   6: _scalar_add_scalar.12:[CNode]251{[0]: ValueNode<Primitive> Return, [1]: [CNode]250}
+
+
+#===============================================================================
+# num of function graphs in stack: 7/9 (Ignored 2 internal frames).
